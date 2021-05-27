@@ -1,9 +1,8 @@
 from pathlib import Path
 import os
 import pyperclip
-
-
-print('\n')
+from gitignore_parser import parse_gitignore
+import time
 
 class TreeHandler():
     
@@ -15,9 +14,19 @@ class TreeHandler():
     last =   '└── '
     # files to ignore:
     ignore_files = ['.git']
+
+    @staticmethod
+    def getIgnoreFiles(gitignore_path :Path='.gitignore'):
+        matches = parse_gitignore('.gitignore')
+        matches('/home/michael/project/main.py')
+        with open(gitignore_path,'r') as f:
+            ignore_filess = f.readlines()
+        print(ignore_filess)
+
     
     @staticmethod
-    def getTree(dir_path: Path, prefix: str='', ignore_files: list=ignore_files):
+    # def getTree(dir_path: Path, prefix: str='', ignore_files: list=ignore_files):
+    def getTree(dir_path: Path, prefix: str='', gitignore_path: Path='.gitignore'):
         """
         A recursive generator function,
         which yeilds a visual tree structure line by line.
@@ -27,13 +36,14 @@ class TreeHandler():
         @param ignore_files: Files and directories to ignore
 
         """    
-        contents = [path for path in dir_path.iterdir() if path.name not in ignore_files]
+        matches_gitignore = parse_gitignore(gitignore_path)
+        contents = [path for path in dir_path.iterdir() if not matches_gitignore(path.absolute()) and not path.name.endswith('.git')]
         pointers = [TreeHandler.tee] * (len(contents) - 1) + [TreeHandler.last]
         for pointer, path in zip(pointers, contents):
             yield prefix + pointer + path.name
             if path.is_dir(): 
                 extension = TreeHandler.branch if pointer == TreeHandler.tee else TreeHandler.space 
-                yield from TreeHandler.getTree(path, prefix=prefix+extension,ignore_files=ignore_files)
+                yield from TreeHandler.getTree(path, prefix=prefix+extension,gitignore_path=gitignore_path)
 
     @staticmethod
     def formatTree(dir_path: Path, dsc_spacing: int=4, base_spacing: int=2):
