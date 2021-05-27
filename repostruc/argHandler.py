@@ -1,6 +1,7 @@
 from __init__ import __version__ as version
 import sys
 from docopt import docopt
+from pathlib import Path
 
 sys.dont_write_bytecode = True
 
@@ -25,7 +26,7 @@ class GetArgumentParser:
                 Usage:
                     repostruc 
                     repostruc (-c | --clip)
-                    repostruc (-f | --file) <filepath> [-r | --readme]
+                    repostruc [-r | --readme] (-f | --file) [<filepath>]
                     repostruc (-h | --help)
                     repostruc (-v | --version)
                 

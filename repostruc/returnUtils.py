@@ -34,7 +34,6 @@ class ReturnHandler():
         pyperclip.copy(text)
 
     @staticmethod
-    # def saveAsFile():
     def saveAsFile(tree_contents: list, file_path: Path, readme: bool=False):
         text = '\n'.join(map(str, tree_contents))
         if readme:
@@ -45,7 +44,3 @@ class ReturnHandler():
         else:
             with open(file_path, 'w') as f:
                 f.write(text)
-
-
-# print(TreeHandler.formatTree(Path().absolute()))
-# ReturnHandler.saveAsFile(['hellloo','hellloo','hellloo'],Path("./temp.md"),readme=True)
