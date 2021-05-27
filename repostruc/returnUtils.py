@@ -37,10 +37,10 @@ class ReturnHandler():
     def saveAsFile(tree_contents: list, file_path: Path, readme: bool=False):
         text = '\n'.join(map(str, tree_contents))
         if readme:
-            with open(file_path, 'w') as f:
+            with open(file_path, 'w', encoding="utf-8") as f:
                 f.write(ReturnHandler.headDoc)
                 f.write(text)
                 f.write(ReturnHandler.tailDoc)
         else:
-            with open(file_path, 'w') as f:
+            with open(file_path, 'w', encoding="utf-8") as f:
                 f.write(text)
