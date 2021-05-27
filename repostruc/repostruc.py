@@ -1,5 +1,6 @@
 from pathlib import Path
 import os
+import pyperclip
 
 
 
@@ -46,6 +47,13 @@ def formatTree(dir_path: Path, dsc_spacing: int=4, base_spacing: int=2):
     tree_contents = [' '*base_spacing + line + ' '*int(dsc_spacing + len(max_string_length) - len(line)) + '<= DSC' for line in tree_contents]
     for i in tree_contents:
         print(i)
+    copyToClipboard(tree_contents)
 
+def copyToClipboard(tree_contents: list):
+    text = '\n'.join(map(str, tree_contents))
+    pyperclip.copy(text)
 
 formatTree(Path().absolute())
+
+
+
