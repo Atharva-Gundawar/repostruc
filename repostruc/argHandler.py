@@ -23,11 +23,11 @@ class GetArgumentParser:
         doc = """repostruc.
 
                 Usage:
-                    main.py 
-                    main.py (-c | --clip)
-                    main.py (-r | --readme) <filepath>
-                    main.py (-h | --help)
-                    main.py --version
+                    repostruc 
+                    repostruc (-c | --clip)
+                    repostruc (-f | --file) <filepath> [-r | --readme]
+                    repostruc (-h | --help)
+                    repostruc (-v | --version)
                 
                 Options:
                     -r --readme   Add to readme file.
