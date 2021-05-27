@@ -3,20 +3,19 @@ import os
 import pyperclip
 
 
-
-# prefix components:
-space =  '    '
-branch = '│   '
-# pointers:
-tee =    '├── '
-last =   '└── '
-# files to ignore:
-ignore_files = ['.git']
-
 print('\n')
 
 class TreeHandler(object):
-
+    
+    # prefix components:
+    space =  '    '
+    branch = '│   '
+    # pointers:
+    tee =    '├── '
+    last =   '└── '
+    # files to ignore:
+    ignore_files = ['.git']
+    
     @staticmethod
     def getTree(dir_path: Path, prefix: str='', ignore_files: list=ignore_files):
         """
@@ -29,11 +28,11 @@ class TreeHandler(object):
 
         """    
         contents = [path for path in dir_path.iterdir() if path.name not in ignore_files]
-        pointers = [tee] * (len(contents) - 1) + [last]
+        pointers = [TreeHandler.tee] * (len(contents) - 1) + [TreeHandler.last]
         for pointer, path in zip(pointers, contents):
             yield prefix + pointer + path.name
             if path.is_dir(): 
-                extension = branch if pointer == tee else space 
+                extension = TreeHandler.branch if pointer == TreeHandler.tee else TreeHandler.space 
                 yield from TreeHandler.getTree(path, prefix=prefix+extension,ignore_files=ignore_files)
 
     @staticmethod
@@ -45,13 +44,12 @@ class TreeHandler(object):
         @param dsc_spacing: Spacing between file and discription.
         @param base_spacing: Spacing before file. 
 
+        @return List of tree contents.
         """
-        tree_contents = [line for line in getTree(Path().absolute())]
+        tree_contents = [line for line in TreeHandler.getTree(Path().absolute())]
         max_string_length = max(tree_contents, key=len)
         tree_contents = [' '*base_spacing + line + ' '*int(dsc_spacing + len(max_string_length) - len(line)) + '<= DSC' for line in tree_contents]
-        for i in tree_contents:
-            print(i)
-        TreeHandler.copyToClipboard(tree_contents)
+        return tree_contents
 
     @staticmethod
     def copyToClipboard(tree_contents: list):
@@ -63,4 +61,4 @@ class TreeHandler(object):
         text = '\n'.join(map(str, tree_contents))
         pyperclip.copy(text)
 
-    formatTree(Path().absolute())
+# print(TreeHandler.formatTree(Path().absolute()))
