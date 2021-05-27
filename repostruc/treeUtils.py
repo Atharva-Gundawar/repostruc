@@ -12,18 +12,7 @@ class TreeHandler():
     # pointers:
     tee =    '├── '
     last =   '└── '
-    # files to ignore:
-    ignore_files = ['.git']
 
-    @staticmethod
-    def getIgnoreFiles(gitignore_path :Path='.gitignore'):
-        matches = parse_gitignore('.gitignore')
-        matches('/home/michael/project/main.py')
-        with open(gitignore_path,'r') as f:
-            ignore_filess = f.readlines()
-        print(ignore_filess)
-
-    
     @staticmethod
     # def getTree(dir_path: Path, prefix: str='', ignore_files: list=ignore_files):
     def getTree(dir_path: Path, prefix: str='', gitignore_path: Path='.gitignore'):
@@ -46,7 +35,7 @@ class TreeHandler():
                 yield from TreeHandler.getTree(path, prefix=prefix+extension,gitignore_path=gitignore_path)
 
     @staticmethod
-    def formatTree(dir_path: Path, dsc_spacing: int=4, base_spacing: int=2):
+    def formatTree(dir_path: Path, dsc_spacing: int=4, base_spacing: int=2, gitignore_path=gitignore_path):
         """
         Adds spacing before and after every file.
 
@@ -56,7 +45,7 @@ class TreeHandler():
 
         @return List of tree contents.
         """
-        tree_contents = [line for line in TreeHandler.getTree(Path().absolute())]
+        tree_contents = [line for line in TreeHandler.getTree(Path().absolute(),gitignore_path=gitignore_path)]
         max_string_length = max(tree_contents, key=len)
         tree_contents = [' '*base_spacing + line + ' '*int(dsc_spacing + len(max_string_length) - len(line)) + '<- DSC' for line in tree_contents]
         return tree_contents
