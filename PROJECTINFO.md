@@ -1,7 +1,9 @@
 # Product Name
+
 > Short blurb about what your product does.
 
-### File Structure
+## File Structure
+
 ------------
 
     ├── README.md          <- The top-level README for developers using this project.
@@ -40,10 +42,8 @@
         │
         └── visualization  <- Scripts to create exploratory and results oriented visualizations
             └── visualize.py
-    
 
-
---------
+------------
 
 ## Contributing
 
