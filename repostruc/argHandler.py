@@ -1,4 +1,4 @@
-# from __init__ import __version__ as version
+from __init__ import __version__ as version
 import sys
 from docopt import docopt
 
@@ -36,8 +36,7 @@ class GetArgumentParser:
 
                 """
         self.doc = doc
-        # self.version = version
-        self.version = 'v0.0.0'
+        self.version = version
         self.name = "repostruc"
 
     def getArguments(self):
