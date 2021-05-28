@@ -1,1 +1,7 @@
-
+pathlib==1.0.1
+pyperclip==1.8.0
+gitignore_parser==0.0.8
+setuptools==57.0.0
+io==0.0.1
+docopt==0.6.2
+argHandler==1.2.0
