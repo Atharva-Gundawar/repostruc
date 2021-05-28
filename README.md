@@ -1,6 +1,10 @@
 # Project Title
 
-`repostruc` is a cross-platform library that returns the directory structure in a formated form. The structure can be copied to your clipboard or a .md file can be made available.[`.md example`](PROJECTINFO.md)
+>`repostruc` is a cross-platform library that returns the directory structure in a formated form. The structure can be copied to your clipboard or a .md file can be made available.[`.md example`](PROJECTINFO.md)
+
+## Ignored files
+
+>`repostruc` ignores files from [`.gitinore`](.gitinore) file if present else ignores commonly ignored files and directories.
 
 ## Install the Requirements
 
@@ -28,7 +32,9 @@ repostruc -f filepath
 repostruc -r -f
 ```
 
----
+## Example
+
+ View [`PROJECTINFO.md`](PROJECTINFO.md) which was made using `repostruc`
 
 ## Built With
 

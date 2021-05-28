@@ -1,6 +1,6 @@
-# Product Name
+# Project Title
 
-> Short blurb about what your product does.
+>`repostruc` is a cross-platform library that returns the directory structure in a formated form. The structure can be copied to your clipboard or a .md file can be made available.[`.md example`](PROJECTINFO.md)
 
 ## File Structure
 
