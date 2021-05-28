@@ -1,11 +1,17 @@
-from pathlib import Path
-import os
-import pyperclip
 from gitignore_parser import parse_gitignore
-import time
+from pathlib import Path
+import pyperclip
 
 class TreeHandler():
+    """
+    TreeHandler contains methods to handle the Directory tree :
     
+    @functions
+    getTree    => Returns visual tree structure.
+    formatTree => Formats tree structure.
+    
+    """
+
     # prefix components:
     space =  '    '
     branch = '│   '
@@ -16,7 +22,6 @@ class TreeHandler():
     ignore_files = ['.git','__pycache__','node_modules','.env']
 
     @staticmethod
-    # def getTree(dir_path: Path, prefix: str='', ignore_files: list=ignore_files):
     def getTree(dir_path: Path, prefix: str='', gitignore_path: Path='.gitignore'):
         """
         A recursive generator function,

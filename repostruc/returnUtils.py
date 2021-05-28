@@ -1,7 +1,16 @@
 from pathlib import Path
 import pyperclip
 
-class ReturnHandler():    
+class ReturnHandler():   
+    """
+    ReturnHandler contains methods to return the Directory tree :
+    
+    @functions
+    copyToClipboard     => Copies tree structure to clipboard.
+    saveAsFile          => Saves tree structure to a file.
+    
+    """
+
     headDoc ="""
 # Product Name
 

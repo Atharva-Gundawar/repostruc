@@ -1,7 +1,7 @@
 from __init__ import __version__ as version
-import sys
 from docopt import docopt
 from pathlib import Path
+import sys
 
 sys.dont_write_bytecode = True
 

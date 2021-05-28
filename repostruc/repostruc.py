@@ -1,7 +1,8 @@
-from pathlib import Path
 from argHandler import GetArgumentParser
 from returnUtils import ReturnHandler
 from treeUtils import TreeHandler
+from pathlib import Path
+
 def main():
     """
     Main function which handles argumenst passed,
