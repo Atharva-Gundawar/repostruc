@@ -6,18 +6,18 @@
 ## File Structure
 
 ```markdown
-  ├── .gitignore                           <- DSC
-  ├── LICENSE                              <- DSC
-  ├── Pipfile                              <- DSC
-  ├── PROJECTINFO.md                       <- DSC
-  ├── README.md                            <- DSC
-  ├── repostruc                            <- DSC
-  │   ├── argHandler.py                    <- DSC
-  │   ├── repostruc.py                     <- DSC
-  │   ├── returnUtils.py                   <- DSC
-  │   ├── treeUtils.py                     <- DSC
-  │   └── __init__.py                      <- DSC
-  └── requirements.txt                     <- DSC
+  ├── .gitignore            <- DSC
+  ├── LICENSE               <- DSC
+  ├── Pipfile               <- DSC
+  ├── PROJECTINFO.md        <- DSC
+  ├── README.md             <- DSC
+  ├── repostruc             <- DSC
+  │   ├── argHandler.py     <- DSC
+  │   ├── repostruc.py      <- DSC
+  │   ├── returnUtils.py    <- DSC
+  │   ├── treeUtils.py      <- DSC
+  │   └── __init__.py       <- DSC
+  └── requirements.txt      <- DSC
 
 ```
 

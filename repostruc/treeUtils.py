@@ -13,6 +13,8 @@ class TreeHandler():
     tee =    '├── '
     last =   '└── '
 
+    ignore_files = ['.git','__pycache__','node_modules','.env']
+
     @staticmethod
     # def getTree(dir_path: Path, prefix: str='', ignore_files: list=ignore_files):
     def getTree(dir_path: Path, prefix: str='', gitignore_path: Path='.gitignore'):
@@ -25,8 +27,11 @@ class TreeHandler():
         @param ignore_files: Files and directories to ignore
 
         """    
-        matches_gitignore = parse_gitignore(gitignore_path)
-        contents = [path for path in dir_path.iterdir() if not matches_gitignore(path.absolute()) and not path.name.endswith('.git')]
+        if Path(gitignore_path).is_file():
+            matches_gitignore = parse_gitignore(gitignore_path)
+            contents = [path for path in dir_path.iterdir() if not matches_gitignore(path.absolute()) and not path.name.endswith('.git')]
+        else:
+            contents = [path for path in dir_path.iterdir() if path.name not in TreeHandler.ignore_files]
         pointers = [TreeHandler.tee] * (len(contents) - 1) + [TreeHandler.last]
         for pointer, path in zip(pointers, contents):
             yield prefix + pointer + path.name
@@ -35,7 +40,7 @@ class TreeHandler():
                 yield from TreeHandler.getTree(path, prefix=prefix+extension,gitignore_path=gitignore_path)
 
     @staticmethod
-    def formatTree(dir_path: Path, dsc_spacing: int=4, base_spacing: int=2, gitignore_path=gitignore_path):
+    def formatTree(dir_path: Path, gitignore_path: Path='.gitignore', dsc_spacing: int=4, base_spacing: int=2):
         """
         Adds spacing before and after every file.
 
