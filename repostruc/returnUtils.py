@@ -44,6 +44,12 @@ class ReturnHandler():
 
     @staticmethod
     def saveAsFile(tree_contents: list, file_path: Path, readme: bool=False):
+        """
+        Saves Tree contents to file or readme.
+        @param tree_contents: List object containing tree contents.
+        @param file_path: Path to the file
+        @param readme: True if file is readme
+        """
         text = '\n'.join(map(str, tree_contents))
         if readme:
             with open(file_path, 'w', encoding="utf-8") as f:
