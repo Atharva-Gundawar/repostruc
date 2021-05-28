@@ -14,7 +14,7 @@ DESCRIPTION = 'Python module to generate Directory tree structure.'
 URL = 'https://github.com/Atharva-Gundawar/repostruc'
 EMAIL = 'atharva.n.gundawar@gmail.com'
 AUTHOR = 'Atharva Gundawar'
-REQUIRES_PYTHON = '>=3.6.0'
+REQUIRES_PYTHON = '>=3.5.0'
 VERSION = '0.0.1'
 
 REQUIRED = [
@@ -62,7 +62,7 @@ setup(
         # Full list: https://pypi.python.org/pypi?%3Aaction=list_classifiers
         'License :: OSI Approved :: MIT License',
         'Programming Language :: Python',
-        'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: Implementation :: CPython',
         'Programming Language :: Python :: Implementation :: PyPy',

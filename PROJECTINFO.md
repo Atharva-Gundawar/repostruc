@@ -1,4 +1,3 @@
-
 # Product Name
 
 > Short blurb about what your product does.
@@ -17,7 +16,8 @@
   │   ├── returnUtils.py    <- DSC
   │   ├── treeUtils.py      <- DSC
   │   └── __init__.py       <- DSC
-  └── requirements.txt      <- DSC
+  ├── requirements.txt      <- DSC
+  └── setup.py              <- DSC
 
 ```
 

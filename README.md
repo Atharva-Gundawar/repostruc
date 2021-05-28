@@ -1,85 +1,45 @@
 # Project Title
 
-One Paragraph of project description goes here
+`repostruc` is a cross-platform library that returns the directory structure in a formated form. The structure can be copied to your clipboard or a .md file can be made available.[`.md example`](PROJECTINFO.md)
 
-## Getting Started
+## Install the Requirements
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-
-### Prerequisites
-
-What things you need to install the software and how to install them
-
-```
-Give examples
+```bash
+ pip install repostruc
 ```
 
-### Installing
+## Usage
 
-A step by step series of examples that tell you how to get a development env running
+### To clipboard
 
-Install the Requirements:
-
-```
- pip install -r requirements.txt
+```bash
+repostruc -c
 ```
 
-Say what the step will be
+### To file
 
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
+```bash
+repostruc -f filepath
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
+### To [`PROJECTINFO.md`](PROJECTINFO.md)
 
-## Images
-
-![ DESCRIPTION ](https://via.placeholder.com/400)
-![ DESCRIPTION ](https://via.placeholder.com/400)
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
+```bash
+repostruc -r -f
 ```
 
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
+---
 
 ## Built With
 
-* [Name](<LINK>) - <DESCRIPTION>
-* [Name](<LINK>) - <DESCRIPTION>
-* [Name](<LINK>) - <DESCRIPTION>
+* [`pathlib`](https://pypi.org/project/pathlib/) - pathlib offers a set of classes to handle filesystem paths.
+* [`pyperclip`](https://pypi.org/project/pyperclip3/) - Cross-platform clipboard utilities supporting both binary and text data.
+* [`gitignore_parser`](https://pypi.org/project/gitignore-parser/) - A spec-compliant gitignore parser for Python 3.5+
+* [`docopt`](https://pypi.org/project/docopt/) - creates beautiful command-line interfaces
 
 ## Contributing
 
 Please read [CONTRIBUTING.md](https://github.com/) for details on our code of conduct, and the process for submitting pull requests.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
 
 ## Authors
 
@@ -93,6 +53,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+* Generator function from [*Aaron Hall's*](https://stackoverflow.com/users/541136/aaron-hall) answer [here](https://stackoverflow.com/questions/9727673/list-directory-tree-structure-in-python)
