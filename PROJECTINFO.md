@@ -1,4 +1,4 @@
-# Project Title
+# REPOSTRUC
 
 >`repostruc` is a cross-platform library that returns the directory structure in a formated form. The structure can be copied to your clipboard or a .md file can be made available.[`.md example`](PROJECTINFO.md)
 
