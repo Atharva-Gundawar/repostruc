@@ -1,6 +1,6 @@
-from argHandler import GetArgumentParser
-from returnUtils import ReturnHandler
-from treeUtils import TreeHandler
+from repostruc.argHandler import GetArgumentParser
+from repostruc.returnUtils import ReturnHandler
+from repostruc.treeUtils import TreeHandler
 from pathlib import Path
 
 def main():
