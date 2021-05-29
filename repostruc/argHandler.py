@@ -1,4 +1,4 @@
-from __init__ import __version__ as version
+from repostruc.__init__ import __version__ as version
 from docopt import docopt
 from pathlib import Path
 import sys
