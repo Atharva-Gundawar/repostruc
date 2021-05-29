@@ -5,19 +5,19 @@
 ## File Structure
 
 ```markdown
-  ├── .gitignore            <- DSC
-  ├── LICENSE               <- DSC
-  ├── Pipfile               <- DSC
-  ├── PROJECTINFO.md        <- DSC
-  ├── README.md             <- DSC
-  ├── repostruc             <- DSC
-  │   ├── argHandler.py     <- DSC
-  │   ├── repostruc.py      <- DSC
-  │   ├── returnUtils.py    <- DSC
-  │   ├── treeUtils.py      <- DSC
-  │   └── __init__.py       <- DSC
-  ├── requirements.txt      <- DSC
-  └── setup.py              <- DSC
+  ├── .gitignore            <- Gitignore file
+  ├── LICENSE               <- MIT LICENSE
+  ├── Pipfile               <- Pipfile
+  ├── PROJECTINFO.md        <- PROJECTINFO 
+  ├── README.md             <- README
+  ├── repostruc             <- Main folder
+  │   ├── argHandler.py     <- Handles arguments
+  │   ├── repostruc.py      <- Main file
+  │   ├── returnUtils.py    <- Handles return types
+  │   ├── treeUtils.py      <- Hanldes tree functions
+  │   └── __init__.py       <- __init__.py
+  ├── requirements.txt      <- requirements
+  └── setup.py              <- setup for [pypi](https://pypi.org/project/repostruc/)
 
 ```
 
