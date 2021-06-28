@@ -17,7 +17,7 @@
   │   ├── treeUtils.py      <- Hanldes tree functions
   │   └── __init__.py       <- __init__.py
   ├── requirements.txt      <- requirements
-  └── setup.py              <- setup for [pypi](https://pypi.org/project/repostruc/)
+  └── setup.py              <- setup for pypi
 
 ```
 
