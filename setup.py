@@ -13,7 +13,7 @@ URL = 'https://github.com/Atharva-Gundawar/repostruc'
 EMAIL = 'atharva.n.gundawar@gmail.com'
 AUTHOR = 'Atharva Gundawar'
 REQUIRES_PYTHON = '>=3.5.0'
-VERSION = '0.0.5'
+VERSION = '0.0.6'
 
 REQUIRED = [
 "pathlib","pyperclip","gitignore_parser","setuptools","docopt"

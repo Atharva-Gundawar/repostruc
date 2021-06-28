@@ -1,4 +1,5 @@
 from pathlib import Path
+import subprocess
 import pyperclip
 
 class ReturnHandler():   
@@ -20,13 +21,15 @@ class ReturnHandler():
 
 ```markdown
 """
-    tailDoc ="""
+    tailDocUpper ="""
 
 ```
 
 ## Contributing
 
-1. Fork it (<https://github.com/yourname/yourproject/fork>)
+1. Fork it (<""" 
+
+    tailDocLower ="""/fork>)
 2. Create your feature branch (`git checkout -b feature/fooBar`)
 3. Commit your changes (`git commit -am 'Add some fooBar'`)
 4. Push to the branch (`git push origin feature/fooBar`)
@@ -52,10 +55,17 @@ class ReturnHandler():
         """
         text = '\n'.join(map(str, tree_contents))
         if readme:
+            try:
+                result  = subprocess.run('git config --get remote.origin.url'.split(" "), stdout=subprocess.PIPE)
+                url = result.stdout.decode('utf-8')[:-1]
+                if len(url) == 0:
+                    url = 'https://github.com/USERNAME/REPONAME'
+            except:
+                url = 'https://github.com/USERNAME/REPONAME'
             with open(file_path, 'w', encoding="utf-8") as f:
                 f.write(ReturnHandler.headDoc)
                 f.write(text)
-                f.write(ReturnHandler.tailDoc)
+                f.write(ReturnHandler.tailDocUpper + url + ReturnHandler.tailDocLower)
         else:
             with open(file_path, 'w', encoding="utf-8") as f:
                 f.write(text)
