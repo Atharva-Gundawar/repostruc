@@ -62,7 +62,7 @@ class ReturnHandler():
                     url = 'https://github.com/USERNAME/REPONAME'
             except:
                 url = 'https://github.com/USERNAME/REPONAME'
-            with open(file_path, 'w', encoding="utf-8") as f:
+            with open(str(file_path), 'w', encoding="utf-8") as f:
                 f.write(ReturnHandler.headDoc)
                 f.write(text)
                 f.write(ReturnHandler.tailDocUpper + url + ReturnHandler.tailDocLower)
